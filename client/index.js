@@ -9,6 +9,7 @@ import SongList from "./components/SongList"
 import SongCreate from './components/SongCreate';
 import SongDetail from './components/SongDetail';
 import App from "./components/App"
+import CreateLyrics from './components/CreateLyrics';
 
 const client=new ApolloClient({url:"/graphql"})
 
@@ -21,6 +22,7 @@ const Root = () => {
           <IndexRoute component={SongList} />
           <Route path="song/new" exact component={SongCreate} />
           <Route path="song/:id" exact component={SongDetail} />
+          <Route path="song/ly" exact component={CreateLyrics} />
         </Route>
       </Router>
     </ApolloProvider>

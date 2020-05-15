@@ -41,10 +41,10 @@ class SongCreate extends Component{
                 <div className="form">
                 <form onSubmit={(event)=>this.onSubmitHandler(event)}>
                     <div className="form-group">
-                    <div className="input-label">
+                    <div className="input-label" style={{fontSize:"1.4rem"}}>
                         Song Title
                     </div>
-                        <input className="form-control" value={this.state.title} onChange={(event)=>this.onChangeHandler(event)}/>
+                        <input className="form-control " style={{fontSize:"2rem"}}  value={this.state.title} onChange={(event)=>this.onChangeHandler(event)}/>
                     </div>
                     <button className="btn btn-primary ">Create</button>
                     <Link className="btn btn-primary f-5 text-light ml-2" to="/">Back</Link>

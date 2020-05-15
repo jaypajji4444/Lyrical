@@ -1,5 +1,12 @@
 .outer{
-    background: #eecda3;
-    background: linear-gradient(to right, #eecda3, #ef629f);
+    background: #007991;
+    background: -webkit-linear-gradient(to right, #007991, #78ffd6);
+    background: linear-gradient(to right, #007991, #78ffd6);
     min-height: 100vh;
 }
+
+
+.form-control:focus {
+    box-shadow: none;
+}
+
