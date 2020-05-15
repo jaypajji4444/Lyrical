@@ -23,6 +23,15 @@ query SongQuery($id: ID!) {
 }
 `;
 
+
+const deleteSong=gql`
+mutation DeleteSong($id:ID){
+    deleteSong(id:$id){
+        id
+    }
+}
+`
+
 module.exports={
-    fetchSongs,fetchSong
+    fetchSongs,fetchSong,deleteSong
 }
