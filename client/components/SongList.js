@@ -1,6 +1,7 @@
-import React,{Component} from "react"
-import {graphql} from "react-apollo"
-import gql from "graphql-tag"
+import React,{Component} from "react";
+import {graphql} from "react-apollo";
+import gql from "graphql-tag";
+import  {Link} from "react-router"
 
 
 
@@ -15,6 +16,9 @@ class SongList extends Component{
         return(
             <div>
                 <ul className="collection mt-5"> {lists}</ul>
+                <div className="mt-3 text-center">
+                    <Link className="btn-floating blue btn-large"  to="/song/new"><i className="material-icons">add</i></Link>
+                </div>
             </div>
         )
     }
