@@ -26,7 +26,12 @@ const mutation = new GraphQLObjectType({
         songId: { type: GraphQLID }
       },
       resolve(parentValue, { content, songId }) {
-        return addSongLyrics(songId,content).then(res=>{res}).catch(err=>console.log(err))
+        return addSongLyrics(songId,content)
+        .then(res=>{
+          console.log(res)
+          return res
+        })
+        .catch(err=>console.log(err))
       }
     },
     likeLyric: {

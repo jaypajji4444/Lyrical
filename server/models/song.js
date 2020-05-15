@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Lyrics model
+const Lyric=require("./lyric")
+
 
 
 const SongSchema = new Schema({
@@ -10,7 +13,7 @@ const SongSchema = new Schema({
     ref: 'user'
   },
   lyrics: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'lyric'
   }]
 });
@@ -30,10 +33,10 @@ const SongSchema = new Schema({
 //     });
 // }
 
-// SongSchema.statics.findLyrics = function(id) {
-//   return this.findById(id)
-//     .populate('lyrics')
-//     .then(song => song.lyrics);
-// }
+SongSchema.statics.findLyrics = function(id) {
+  return this.findById(id)
+    .populate('lyrics')
+    .then(song => song.lyrics);
+}
 
 module.exports=mongoose.model('song', SongSchema);

@@ -6,8 +6,7 @@ const fetchSongs = gql`
     id
     title
     }
-}
-`;
+}`;
 
 const fetchSong = gql`
 query SongQuery($id: ID!) {
@@ -20,14 +19,20 @@ query SongQuery($id: ID!) {
             likes
         }
     }
-}
-`;
-
+}`;
 
 const deleteSong=gql`
 mutation DeleteSong($id:ID){
     deleteSong(id:$id){
         id
+    }
+}
+`
+
+const addLyrics=gql`
+mutation AddLyrics($id:ID,$content:String){
+    addLyricToSong(id:$id,content:$content){
+        id,title
     }
 }
 `

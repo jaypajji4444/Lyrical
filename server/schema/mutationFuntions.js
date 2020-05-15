@@ -17,7 +17,7 @@ const addSongLyrics=async(id,content)=>{
     await lyric.save()
     song.lyrics.push(lyric._id)
     await song.save()
-    return song;
+    return song.populate("lyrics");
 }
 
 
