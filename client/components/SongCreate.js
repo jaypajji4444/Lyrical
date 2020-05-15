@@ -1,8 +1,8 @@
-
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Link, hashHistory } from 'react-router';
+import {fetchSongs} from "../queries/fetchQueries"
 
 class SongCreate extends Component{
     constructor(props){
@@ -15,7 +15,8 @@ class SongCreate extends Component{
     onSubmitHandler(event){
         event.preventDefault()
         this.props.mutate({
-            variables:{title:this.state.title}
+            variables:{title:this.state.title},
+            refetchQueries:[{query:fetchSongs}]
         })
         .then(data=>{
             this.setState({show:true,title:""})
