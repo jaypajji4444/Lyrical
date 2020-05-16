@@ -5,17 +5,25 @@ import {likeLyricsMutation} from '../queries/fetchQueries'
 
 class LyricList extends Component{
 
-    addLike(id){
+    addLike(id,likes){
         this.props.mutate({
-            variables:{id:id}
-        })
-        .then(()=>{
-            console.log(this.props)
+            variables:{id:id},
+            optimisticResponse:{
+                // Specify mutation or query
+                __typename:"Mutation",
+                // Replicate what data is expected to be returned from server
+                likeLyric:{
+                    id:id,
+                    __typename: "LyricType",
+                    likes:likes + 1
+                }
+
+            }
         })
     }
 
     render(){
-        console.log(this.props.lyrics)
+        
         let list=<li className="collection-item">Be the First To Add The Lyrics</li>
         if(this.props.lyrics.length!==0){
             list=this.props.lyrics.map(lyric=>{
@@ -25,7 +33,7 @@ class LyricList extends Component{
                                 {lyric.content}
                             </div>
                             <div className="col-sm-4 vote-box">
-                                <i className="material-icons" onClick={()=>this.addLike(lyric.id)}>thumb_up</i>{lyric.likes}
+                                <i className="material-icons" onClick={()=>this.addLike(lyric.id,lyric.likes)}>thumb_up</i>{lyric.likes}
                             </div>
                         </div>
                 )
@@ -36,7 +44,7 @@ class LyricList extends Component{
         
             <div className="card">
         <div id="headingOne" className="card-header bg-white shadow-sm border-0">
-            <h4 className="mb-0 font-weight-bold text-uppercase text-center">Hello Word</h4>
+            <h4 className="mb-0 font-weight-bold text-uppercase text-center">Song-Lyrics</h4>
         </div>
         <div  className="collapse show">
             <div className="card-body p-5">

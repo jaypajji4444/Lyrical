@@ -45,7 +45,7 @@ mutation AddLyrics( $songId: ID , $content: String ) {
 const likeLyricsMutation=gql`
 mutation LikeLyrics($id:ID){
     likeLyric(id:$id){
-        id,likes,content
+        id,likes
     }
         }
 `
