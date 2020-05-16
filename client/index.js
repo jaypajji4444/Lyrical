@@ -11,11 +11,14 @@ import SongDetail from './components/SongDetail';
 import App from "./components/App"
 import CreateLyrics from './components/CreateLyrics';
 
-const client=new ApolloClient({url:"/graphql"})
+const client=new ApolloClient({
+  url:"/graphql",
+  dataIdFromObject: o => o.id
+})
 
 const Root = () => {
   return (
-   <div className="outer">
+  <div className="outer">
     <ApolloProvider client={client}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>

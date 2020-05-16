@@ -34,17 +34,25 @@ mutation AddLyrics( $songId: ID , $content: String ) {
     addLyricToSong(content: $content, songId: $songId) {
     id
     lyrics {
-      id
-      content
-      likes
+    id
+    content
+    likes
     }
-  }
+}
 }
 `;
+
+const likeLyricsMutation=gql`
+mutation LikeLyrics($id:ID){
+    likeLyric(id:$id){
+        id,likes,content
+    }
+        }
+`
 
 
 
 
 module.exports={
-    fetchSongs,fetchSong,deleteSong,addLyricsMutation
+    fetchSongs,fetchSong,deleteSong,addLyricsMutation,likeLyricsMutation
 }
