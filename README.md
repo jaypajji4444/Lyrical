@@ -1,5 +1,5 @@
 # Lyrical
-MERN-Stack GraphQL Webapp where multiple people can contribute in making a song by adding lyrics to it..
+### GraphQL learning project :=> MERN-Stack WebApp where multiple people can contribute in making a song by adding lyrics to it..
 
 ## Installation
 In the root Directory
