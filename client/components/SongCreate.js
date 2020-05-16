@@ -22,7 +22,7 @@ class SongCreate extends Component{
             this.setState({show:true,title:""})
             setTimeout(()=>{
                 this.setState({show:false})
-            },3000)
+            },7000)
             hashHistory.push("/")
         })
     }
@@ -37,7 +37,7 @@ class SongCreate extends Component{
         return(
             <div className="mb-4">
         {this.state.show?<div className="text-center mt-4" style={{backgroundColor:"green"}}><h2 className="text-light">Successfully Added</h2></div>:null}
-                <h2 >Create A New Song!</h2>
+                <h2  >Create A New Song!</h2>
                 <div className="form">
                 <form onSubmit={(event)=>this.onSubmitHandler(event)}>
                     <div className="form-group">

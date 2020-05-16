@@ -1,9 +1,6 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql;
 const {addSong,addSongLyrics,likeSongLyrics,deleteSong} =require("./mutationFuntions")
-const mongoose = require('mongoose');
-const Song = mongoose.model('song');
-const Lyric = mongoose.model('lyric');
 const SongType = require('./song_type');
 const LyricType = require('./lyric_type');
 
