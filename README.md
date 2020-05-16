@@ -1,6 +1,6 @@
 # Lyrical
-### GraphQL learning project => MERN-Stack WebApp where multiple people can contribute in making a song by adding lyrics to it..
-### Reference : https://github.com/StephenGrider/GraphQLCasts/tree/master/Lyrical-GraphQL
+ GraphQL learning project => MERN-Stack WebApp where multiple people can contribute in making a song by adding lyrics to it..
+ Reference : https://github.com/StephenGrider/GraphQLCasts/tree/master/Lyrical-GraphQL
 
 ## Installation
 In the root Directory
